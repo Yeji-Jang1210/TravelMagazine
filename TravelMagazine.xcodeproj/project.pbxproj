@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B89B907B2C023A9E007A7DE1 /* Restaurant.swift in Sources */ = {isa = PBXBuildFile; fileRef = B89B907A2C023A9E007A7DE1 /* Restaurant.swift */; };
 		B8C71BA22C01B341007C15C4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8C71BA12C01B341007C15C4 /* AppDelegate.swift */; };
 		B8C71BA42C01B341007C15C4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8C71BA32C01B341007C15C4 /* SceneDelegate.swift */; };
 		B8C71BA92C01B341007C15C4 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = B8C71BA82C01B341007C15C4 /* Base */; };
@@ -17,9 +18,12 @@
 		B8C71BBC2C01B458007C15C4 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = B8C71BBB2C01B458007C15C4 /* Kingfisher */; };
 		B8C71BBF2C01B544007C15C4 /* MagazineTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8C71BBE2C01B544007C15C4 /* MagazineTableViewCell.swift */; };
 		B8C71BC12C01B556007C15C4 /* MagazineTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8C71BC02C01B556007C15C4 /* MagazineTableViewController.swift */; };
+		B8F89F5A2C0251B00068B0AA /* RestaurantTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F89F592C0251B00068B0AA /* RestaurantTableViewController.swift */; };
+		B8F89F5C2C0251BF0068B0AA /* RestaurantTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F89F5B2C0251BF0068B0AA /* RestaurantTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B89B907A2C023A9E007A7DE1 /* Restaurant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Restaurant.swift; sourceTree = "<group>"; };
 		B8C71B9E2C01B341007C15C4 /* TravelMagazine.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TravelMagazine.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B8C71BA12C01B341007C15C4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B8C71BA32C01B341007C15C4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -31,6 +35,8 @@
 		B8C71BB82C01B36D007C15C4 /* Magazine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Magazine.swift; sourceTree = "<group>"; };
 		B8C71BBE2C01B544007C15C4 /* MagazineTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MagazineTableViewCell.swift; sourceTree = "<group>"; };
 		B8C71BC02C01B556007C15C4 /* MagazineTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MagazineTableViewController.swift; sourceTree = "<group>"; };
+		B8F89F592C0251B00068B0AA /* RestaurantTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantTableViewController.swift; sourceTree = "<group>"; };
+		B8F89F5B2C0251BF0068B0AA /* RestaurantTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +84,7 @@
 		B8C71BB72C01B35A007C15C4 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				B89B907A2C023A9E007A7DE1 /* Restaurant.swift */,
 				B8C71BB52C01B357007C15C4 /* MagazineInfo.swift */,
 				B8C71BB82C01B36D007C15C4 /* Magazine.swift */,
 			);
@@ -90,6 +97,8 @@
 				B8C71BA72C01B341007C15C4 /* Main.storyboard */,
 				B8C71BBE2C01B544007C15C4 /* MagazineTableViewCell.swift */,
 				B8C71BC02C01B556007C15C4 /* MagazineTableViewController.swift */,
+				B8F89F592C0251B00068B0AA /* RestaurantTableViewController.swift */,
+				B8F89F5B2C0251BF0068B0AA /* RestaurantTableViewCell.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -174,8 +183,11 @@
 				B8C71BB92C01B36D007C15C4 /* Magazine.swift in Sources */,
 				B8C71BBF2C01B544007C15C4 /* MagazineTableViewCell.swift in Sources */,
 				B8C71BB62C01B357007C15C4 /* MagazineInfo.swift in Sources */,
+				B89B907B2C023A9E007A7DE1 /* Restaurant.swift in Sources */,
 				B8C71BC12C01B556007C15C4 /* MagazineTableViewController.swift in Sources */,
 				B8C71BA22C01B341007C15C4 /* AppDelegate.swift in Sources */,
+				B8F89F5A2C0251B00068B0AA /* RestaurantTableViewController.swift in Sources */,
+				B8F89F5C2C0251BF0068B0AA /* RestaurantTableViewCell.swift in Sources */,
 				B8C71BA42C01B341007C15C4 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
