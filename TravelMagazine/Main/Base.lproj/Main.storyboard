@@ -108,7 +108,7 @@
         <scene sceneID="q8U-o4-2Qc">
             <objects>
                 <tableViewController id="HxF-4P-xMr" customClass="RestaurantTableViewController" customModule="TravelMagazine" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="AL2-Ww-5q8">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="AL2-Ww-5q8">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="751"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -185,6 +185,9 @@
                                             <color key="tintColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                             <state key="normal" title="즐겨찾기"/>
+                                            <connections>
+                                                <action selector="likeListButtonTapped:" destination="HxF-4P-xMr" eventType="touchUpInside" id="etn-oH-Rje"/>
+                                            </connections>
                                         </button>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CGf-l4-rPx">
                                             <rect key="frame" x="212.66666666666666" y="0.0" width="67.333333333333343" height="24"/>
@@ -273,12 +276,8 @@
                                                     </constraints>
                                                     <color key="tintColor" systemColor="systemPinkColor"/>
                                                     <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                    <state key="normal">
-                                                        <imageReference key="image" image="heart" catalog="system" symbolScale="large"/>
-                                                    </state>
                                                 </button>
                                             </subviews>
-                                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                             <constraints>
                                                 <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="4aV-rw-uIo" secondAttribute="bottom" constant="16" id="0y9-UR-s2l"/>
                                                 <constraint firstItem="KCE-xq-Fe1" firstAttribute="leading" secondItem="dgk-TV-prX" secondAttribute="leading" constant="20" id="9sH-EI-fFW"/>
@@ -327,7 +326,12 @@
                     <navigationItem key="navigationItem" title="오늘 뭐먹지?!" id="HbT-um-O16"/>
                     <size key="freeformSize" width="320" height="751"/>
                     <connections>
+                        <outlet property="categoryButton" destination="nSp-Nt-bGe" id="bl7-na-zui"/>
+                        <outlet property="likedRestaurantListButton" destination="0T9-pv-Ml7" id="u8X-ez-uSJ"/>
+                        <outlet property="priceButton" destination="HQK-OE-KP7" id="Z3G-n9-Mrr"/>
                         <outlet property="searchBackground" destination="Aab-70-eev" id="AZY-Yx-Dwx"/>
+                        <outlet property="searchButton" destination="eRz-yL-acc" id="H3f-wH-XkR"/>
+                        <outlet property="searchTextField" destination="8pt-Bu-aQs" id="ekJ-I8-ntR"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="d2z-Zo-BCI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -378,7 +382,6 @@
     <resources>
         <image name="airplane" catalog="system" width="128" height="115"/>
         <image name="fork.knife.circle.fill" catalog="system" width="128" height="123"/>
-        <image name="heart" catalog="system" width="128" height="107"/>
         <image name="phone" catalog="system" width="128" height="115"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
