@@ -82,7 +82,7 @@ class RestaurantTableViewController: UITableViewController {
     @IBAction func likeListButtonTapped(_ sender: UIButton) {
         controller.isLikeListButtonTapped.toggle()
         likedRestaurantListButton.setTitle(controller.isLikeListButtonTapped ? "전체보기" : "즐겨찾기", for: .normal)
-        controller.getLikedRestaurant()
+        controller.filteringRestaurantList()
         tableView.reloadData()
     }
     

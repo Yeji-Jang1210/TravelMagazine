@@ -32,8 +32,10 @@ class RestaurantManager {
     }
     
     func filteringRestaurantList(){
+        list = RestaurantList().restaurantArray
         filteringCategory()
         OrderByPrice()
+        getLikedRestaurant()
     }
     
     func getLikedRestaurant(){
@@ -43,10 +45,6 @@ class RestaurantManager {
                 .map({$0.key})
             
             list = list.filter({ likeList.contains($0.name)})
-        } else {
-            list = RestaurantList().restaurantArray
-            filteringCategory()
-            OrderByPrice()
         }
     }
     
@@ -62,7 +60,6 @@ class RestaurantManager {
     }
     
     private func filteringCategory(){
-        list = RestaurantList().restaurantArray
         if category != .all {
             list = list.filter { $0.category == category.rawValue }
         }
