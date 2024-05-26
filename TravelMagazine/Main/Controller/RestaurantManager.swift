@@ -34,7 +34,6 @@ class RestaurantManager {
     func filteringRestaurantList(){
         filteringCategory()
         OrderByPrice()
-        getLikedRestaurant()
     }
     
     func getLikedRestaurant(){
