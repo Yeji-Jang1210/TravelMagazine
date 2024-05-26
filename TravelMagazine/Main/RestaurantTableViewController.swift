@@ -92,6 +92,20 @@ class RestaurantTableViewController: UITableViewController {
         controller.likeList[key]?.toggle()
         tableView.reloadRows(at: [IndexPath(row: sender.tag, section: 0)], with: .automatic)
     }
+    
+    @objc func phoneNumberButtonTapped(_ sender: UIButton){
+        let alert = UIAlertController(title: "통화", message: nil, preferredStyle: .actionSheet)
+        let callAction = UIAlertAction(title: controller.list[sender.tag].phoneNumber, style: .default){ [weak self] action in
+            guard let self else { return }
+            print("📞 통화: \(controller.list[sender.tag].phoneNumber)")
+        }
+        let cancelAction = UIAlertAction(title: "취소", style: .cancel)
+        
+        alert.addAction(callAction)
+        alert.addAction(cancelAction)
+        
+        present(alert, animated: true)
+    }
 }
 
 extension RestaurantTableViewController {
@@ -104,7 +118,10 @@ extension RestaurantTableViewController {
         
         let restaurant = controller.list[indexPath.row]
         cell.likeButton.tag = indexPath.row
+        cell.phoneNumberButton.tag = indexPath.row
+        
         cell.likeButton.addTarget(self, action: #selector(likeButtonTapped), for: .touchUpInside)
+        cell.phoneNumberButton.addTarget(self, action: #selector(phoneNumberButtonTapped), for: .touchUpInside)
         cell.setUI(image: restaurant.image, title: restaurant.name, type: restaurant.category, address: restaurant.address, phoneNumber: restaurant.phoneNumber, price: restaurant.price, liked: controller.likeList[restaurant.name])
         
         return cell
