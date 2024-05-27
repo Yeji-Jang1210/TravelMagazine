@@ -4,6 +4,7 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22684"/>
         <capability name="Image references" minToolsVersion="12.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="UIMenu" message="Requires Xcode 11 or later." minToolsVersion="11.0" requiredIntegratedClassName="UICommandDiff"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -336,7 +337,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="d2z-Zo-BCI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2879.3893129770991" y="884.15492957746483"/>
+            <point key="canvasLocation" x="2812" y="888"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="whw-WG-hb1">
@@ -353,6 +354,7 @@
                     <connections>
                         <segue destination="cmG-gF-rTB" kind="relationship" relationship="viewControllers" id="NFd-go-J3K"/>
                         <segue destination="Guq-3F-DdI" kind="relationship" relationship="viewControllers" id="X8X-FA-ntt"/>
+                        <segue destination="U4I-kn-APZ" kind="relationship" relationship="viewControllers" id="nrr-tS-7HC"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rft-am-k9J" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -378,9 +380,60 @@
             </objects>
             <point key="canvasLocation" x="1886.25" y="887.32394366197184"/>
         </scene>
+        <!--Travel View Controller-->
+        <scene sceneID="cgQ-iR-hfx">
+            <objects>
+                <viewController id="Tb1-mH-UmA" customClass="TravelViewController" customModule="TravelMagazine" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="gHm-Lc-5i7">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="FnC-af-mzs">
+                                <rect key="frame" x="0.0" y="103" width="393" height="666"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Yrl-nA-dRI"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="FnC-af-mzs" firstAttribute="leading" secondItem="Yrl-nA-dRI" secondAttribute="leading" id="Q0W-Vq-Lc2"/>
+                            <constraint firstItem="Yrl-nA-dRI" firstAttribute="bottom" secondItem="FnC-af-mzs" secondAttribute="bottom" id="Uhn-IS-hg3"/>
+                            <constraint firstItem="Yrl-nA-dRI" firstAttribute="trailing" secondItem="FnC-af-mzs" secondAttribute="trailing" id="Zgs-mX-gcJ"/>
+                            <constraint firstItem="FnC-af-mzs" firstAttribute="top" secondItem="Yrl-nA-dRI" secondAttribute="top" id="ete-Kf-0tn"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="fEQ-54-bfR"/>
+                    <connections>
+                        <outlet property="travelTableView" destination="FnC-af-mzs" id="x8A-mQ-gxV"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="auU-cU-9a1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2803.8167938931297" y="1620.4225352112676"/>
+        </scene>
+        <!--City-->
+        <scene sceneID="cxx-53-gM8">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="U4I-kn-APZ" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="City" image="building.2.fill" catalog="system" id="YqE-6Q-1F6"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="zjg-Wa-d1K">
+                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Tb1-mH-UmA" kind="relationship" relationship="rootViewController" id="uJA-fW-7lj"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="V8X-ji-vD2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1878.6259541984732" y="1620.4225352112676"/>
+        </scene>
     </scenes>
     <resources>
         <image name="airplane" catalog="system" width="128" height="115"/>
+        <image name="building.2.fill" catalog="system" width="128" height="117"/>
         <image name="fork.knife.circle.fill" catalog="system" width="128" height="123"/>
         <image name="phone" catalog="system" width="128" height="115"/>
         <systemColor name="labelColor">
