@@ -117,7 +117,6 @@
 				B8F1D2A62C045F260015FD0B /* Restaurant */,
 				B8F1D2A52C045F1B0015FD0B /* Travel */,
 				B8F1D2A42C045F120015FD0B /* Magazine */,
-				B8F89F5D2C0383100068B0AA /* Controller */,
 				B8C71BA72C01B341007C15C4 /* Main.storyboard */,
 			);
 			path = Main;
@@ -155,6 +154,7 @@
 		B8F1D2A62C045F260015FD0B /* Restaurant */ = {
 			isa = PBXGroup;
 			children = (
+				B8F89F5D2C0383100068B0AA /* Controller */,
 				B8F89F592C0251B00068B0AA /* RestaurantTableViewController.swift */,
 				B8F89F5B2C0251BF0068B0AA /* RestaurantTableViewCell.swift */,
 			);

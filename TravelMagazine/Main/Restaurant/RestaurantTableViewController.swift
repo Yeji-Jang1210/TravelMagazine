@@ -82,13 +82,12 @@ class RestaurantTableViewController: UITableViewController {
     @IBAction func likeListButtonTapped(_ sender: UIButton) {
         controller.isLikeListButtonTapped.toggle()
         likedRestaurantListButton.setTitle(controller.isLikeListButtonTapped ? "전체보기" : "즐겨찾기", for: .normal)
-        controller.filteringRestaurantList()
         tableView.reloadData()
     }
     
     
     @objc func likeButtonTapped(_ sender: UIButton){
-        let key = controller.list[sender.tag].name
+        let key = controller.filteredList[sender.tag].name
         controller.likeList[key]?.toggle()
         tableView.reloadRows(at: [IndexPath(row: sender.tag, section: 0)], with: .automatic)
     }
@@ -97,7 +96,7 @@ class RestaurantTableViewController: UITableViewController {
         let alert = UIAlertController(title: "통화", message: nil, preferredStyle: .actionSheet)
         let callAction = UIAlertAction(title: controller.list[sender.tag].phoneNumber, style: .default){ [weak self] action in
             guard let self else { return }
-            print("📞 통화: \(controller.list[sender.tag].phoneNumber)")
+            print("📞 통화: \(controller.filteredList[sender.tag].phoneNumber)")
         }
         let cancelAction = UIAlertAction(title: "취소", style: .cancel)
         
@@ -110,13 +109,13 @@ class RestaurantTableViewController: UITableViewController {
 
 extension RestaurantTableViewController {
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return controller.list.count
+        return controller.filteredList.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "RestaurantTableViewCell", for: indexPath) as! RestaurantTableViewCell
         
-        let restaurant = controller.list[indexPath.row]
+        let restaurant = controller.filteredList[indexPath.row]
         cell.likeButton.tag = indexPath.row
         cell.phoneNumberButton.tag = indexPath.row
         

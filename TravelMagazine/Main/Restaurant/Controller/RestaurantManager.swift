@@ -9,6 +9,7 @@ import Foundation
 
 class RestaurantManager {
     var list = RestaurantList().restaurantArray
+    var filteredList: [Restaurant] = []
     var likeList: [String:Bool] = [:]
     
     var category: FoodCategory = .all {
@@ -19,54 +20,52 @@ class RestaurantManager {
     
     var orderPrice: OrderPrice? = nil {
         didSet {
+            OrderByPrice()
+        }
+    }
+    
+    var isLikeListButtonTapped: Bool = false {
+        didSet {
             filteringRestaurantList()
         }
     }
     
-    var isLikeListButtonTapped: Bool = false
-    
     init(){
+        filteredList = list
         for name in list.map({ $0.name }) {
             likeList[name] = false
         }
     }
     
-    func filteringRestaurantList(){
-        list = RestaurantList().restaurantArray
-        filteringCategory()
-        OrderByPrice()
-        getLikedRestaurant()
-    }
-    
-    func getLikedRestaurant(){
+    private func filteringRestaurantList(){
+        filteredList = list
+        
+        if category != .all {
+            filteredList = list.filter { $0.category == category.rawValue }
+        }
+        
         if isLikeListButtonTapped {
             let likeList = likeList
                 .filter({$0.value == true})
                 .map({$0.key})
             
-            list = list.filter({ likeList.contains($0.name)})
+            filteredList = filteredList.filter({ likeList.contains($0.name)})
         }
     }
     
     private func OrderByPrice(){
         switch orderPrice {
         case .low:
-            list.sort(by: { $0.price < $1.price })
+            filteredList.sort(by: { $0.price < $1.price })
         case .high:
-            list.sort(by: { $0.price > $1.price })
+            filteredList.sort(by: { $0.price > $1.price })
         case nil:
             return
         }
     }
     
-    private func filteringCategory(){
-        if category != .all {
-            list = list.filter { $0.category == category.rawValue }
-        }
-    }
-    
     public func searchRestaurantName(_ text: String){
-        list = list.filter{ $0.name.contains(text) }
+        filteredList = filteredList.filter{ $0.name.contains(text) }
     }
 }
 
