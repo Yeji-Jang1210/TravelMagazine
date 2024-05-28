@@ -26,8 +26,8 @@ class TravelViewController: UIViewController {
     @objc func likeButtonTapped(_ sender: UIButton) {
         if let like = list[sender.tag].like {
             list[sender.tag].like = !like
+            travelTableView.reloadRows(at: [IndexPath(row: sender.tag, section: 0)], with: .automatic)
         }
-        travelTableView.reloadRows(at: [IndexPath(row: sender.tag, section: 0)], with: .automatic)
     }
 }
 
@@ -54,5 +54,28 @@ extension TravelViewController: UITableViewDelegate, UITableViewDataSource {
         cell.setLayout(data: data)
         return cell
         
+    }
+    
+    func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        let share = UIContextualAction(style: .normal, title: "공유") { (actin, view, completion) in
+            completion(true)
+        }
+        share.image = UIImage(systemName: "arrow.uturn.left")
+        share.backgroundColor = UIColor(hexCode: "B2DDFB")
+        return UISwipeActionsConfiguration(actions: [share])
+    }
+    
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        if !list[indexPath.row].ad {
+            let delete = UIContextualAction(style: .destructive, title: "삭제") { (actin, view, completion) in
+                self.list.remove(at: indexPath.row)
+                tableView.reloadData()
+                completion(true)
+            }
+            delete.image = UIImage(systemName: "trash")
+            
+            return UISwipeActionsConfiguration(actions: [delete])
+        }
+        return nil
     }
 }
