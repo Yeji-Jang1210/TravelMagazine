@@ -22,6 +22,7 @@ class TravelTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        travelImageView.backgroundColor = .lightGray
         travelImageView.contentMode = .scaleAspectFill
         travelImageView.layer.cornerRadius = 15
         starRateView.settings.updateOnTouch = false
@@ -31,24 +32,15 @@ class TravelTableViewCell: UITableViewCell {
         nameLabel.text = data.title
         descriptionLabel.text = data.description
         
-        if let grade = data.grade, let save = data.save {
-            starRateView.rating = grade
-            reviewLabel.text = "(\(grade)) • 저장 \(save.formatted())"
-        } else {
-            reviewLabel.text = ""
-        }
         
+        starRateView.rating = data.grade ?? 0
+        reviewLabel.text = data.reviewText
         
         if let urlStr = data.travel_image, let url = URL(string: urlStr) {
             travelImageView.kf.setImage(with: url)
         }
         
-        if let liked = data.like {
-            let image = liked ? "heart.fill" : "heart"
-            likeButton.setBackgroundImage(UIImage(systemName: image), for: .normal)
-            likeButton.layoutIfNeeded()
-            likeButton.subviews.first?.contentMode = .scaleAspectFit
-        }
+        likeButton.setImage(UIImage(systemName: data.likeImage), for: .normal)
         
     }
     

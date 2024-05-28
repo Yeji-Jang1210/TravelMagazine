@@ -14,12 +14,24 @@ struct Travel {
     let save: Int?
     var like: Bool?
     let ad: Bool
+    
+    var reviewText: String {
+        guard let grade, let save else { return "" }
+        return "(\(grade)) • 저장 \(save.formatted())"
+    }
+    
+    var likeImage: String {
+        guard let like else { return "heart" }
+        return like ? "heart.fill" : "heart"
+    }
+    
+    
 }
 
 struct TravelInfo {
     let travel: [Travel] = [
         Travel(title: "하나우마 베이",
-               description: "아름다운 자연을 감상할 수 있는 스노쿨링 명소",
+               description: "아름다운 자연을 감상할 수 있는 스노쿨링 명소아름다운 자연을 감상할 수 있는 스노쿨링 명소아름다운 자연을 감상할 수 있는 스노쿨링 명소아름다운 자연을 감상할 수 있는 스노쿨링 명소아름다운 자연을 감상할 수 있는 스노쿨링 명소아름다운 자연을 감상할 수 있는 스노쿨링 명소아름다운 자연을 감상할 수 있는 스노쿨링 명소아름다운 자연을 감상할 수 있는 스노쿨링 명소아름다운 자연을 감상할 수 있는 스노쿨링 명소아름다운 자연을 감상할 수 있는 스노쿨링 명소아름다운 자연을 감상할 수 있는 스노쿨링 명소아름다운 자연을 감상할 수 있는 스노쿨링 명소아름다운 자연을 감상할 수 있는 스노쿨링 명소",
                travel_image: "https://images.unsplash.com/photo-1539498508910-091b5e859b1d?q=80&w=3250&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
                grade: 4.8,
                save: 6932,
@@ -46,7 +58,7 @@ struct TravelInfo {
                save: 7892,
                like: true,
                ad: false),
-        Travel(title: "하와이 여행을 가고싶다면?\n수업이 있는데 가실 생각은 아니시죠?",
+        Travel(title: "이 기능 다음 주 까지 구현 되나요?\n다른 서비스처럼 이렇게 만들어주실래요?\n간단해 보이는데, 좀 더 빠르게 해줄 수 있나요?\n바로 새싹에서 당신을 가능하게 만듭니다!!🌱",
                description: nil,
                travel_image: nil,
                grade: nil,

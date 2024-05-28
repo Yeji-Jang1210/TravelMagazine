@@ -39,23 +39,6 @@ class MagazineTableViewController: UITableViewController {
         navigationItem.titleView = stackView
     }
     
-    private func convertStringToDate(_ text: String) -> Date? {
-        let dateFormat = DateFormatter()
-        dateFormat.dateFormat = "yyMMdd"
-        
-        return dateFormat.date(from: text)
-    }
-    
-    func setDateFormat(date: String) -> String {
-        guard let date = convertStringToDate(date) else {
-            return ""
-        }
-        
-        let dateFormat = DateFormatter()
-        dateFormat.dateFormat = "yy년 MM월 dd일"
-        return dateFormat.string(from: date)
-    }
-    
 }
 
 extension MagazineTableViewController {
@@ -68,8 +51,7 @@ extension MagazineTableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: MagazineTableViewCell.identifier, for: indexPath) as! MagazineTableViewCell
         
         let magazine = magazines[indexPath.row]
-        cell.setUI(image: magazine.photo_image, title: magazine.title, subtitle: magazine.subtitle, date: setDateFormat(date: magazine.date))
-        
+        cell.setUI(magazine)
         
         return cell
         

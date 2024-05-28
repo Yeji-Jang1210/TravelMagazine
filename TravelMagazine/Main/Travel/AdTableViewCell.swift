@@ -24,15 +24,13 @@ class AdTableViewCell: UITableViewCell {
         adLabel.backgroundColor = .white
         adLabel.layer.cornerRadius = 10
     }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        backgroundColor = AdColor.allCases.randomElement()?.color
     }
     
-    func setLayout(title: String, hexCode: AdColor){
-        backgroundColor = hexCode.color
+    func setLayout(title: String){
         self.titleLabel.text = title
     }
     

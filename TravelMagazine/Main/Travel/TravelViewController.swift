@@ -15,12 +15,17 @@ class TravelViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        configureTableView()
+    }
+    
+    private func configureTableView(){
+        travelTableView.rowHeight = UITableView.automaticDimension
+        travelTableView.delegate = self
+        travelTableView.dataSource = self
         let travelNib = UINib(nibName: TravelTableViewCell.identifier, bundle: nil)
         let adNib = UINib(nibName: "AdTableViewCell", bundle: nil)
         travelTableView.register(travelNib, forCellReuseIdentifier: TravelTableViewCell.identifier)
         travelTableView.register(adNib, forCellReuseIdentifier: AdTableViewCell.identifier)
-        travelTableView.delegate = self
-        travelTableView.dataSource = self
     }
     
     @objc func likeButtonTapped(_ sender: UIButton) {
@@ -32,9 +37,9 @@ class TravelViewController: UIViewController {
 }
 
 extension TravelViewController: UITableViewDelegate, UITableViewDataSource {
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return list[indexPath.row].ad ? 80 : 180
-    }
+//    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+//        return list[indexPath.row].ad ? 80 : 180
+//    }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         list.count
@@ -44,7 +49,7 @@ extension TravelViewController: UITableViewDelegate, UITableViewDataSource {
         let data = list[indexPath.row]
         if data.ad {
             let cell = travelTableView.dequeueReusableCell(withIdentifier: AdTableViewCell.identifier, for: indexPath) as! AdTableViewCell
-            cell.setLayout(title: data.title, hexCode: AdColor.allCases.randomElement()!)
+            cell.setLayout(title: data.title)
             return cell
         }
         

@@ -39,16 +39,16 @@ class MagazineTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
     }
     
-    public func setUI(image: String, title: String, subtitle: String, date: String){
+    public func setUI(_ magazine: Magazine){
         
-        let url = URL(string: image)
+        let url = URL(string: magazine.photo_image)
         photoImageView.kf.indicatorType = .activity
         photoImageView.kf.setImage(with: url)
         
-        titleLabel.text = title
-        subtitleLabel.text = subtitle
+        titleLabel.text = magazine.title
+        subtitleLabel.text = magazine.subtitle
         
-        dateLabel.text = date
+        dateLabel.text = magazine.dateFormat
     }
 
 }
