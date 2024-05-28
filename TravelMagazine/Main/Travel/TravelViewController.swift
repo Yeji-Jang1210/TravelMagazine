@@ -69,6 +69,7 @@ extension TravelViewController: UITableViewDelegate, UITableViewDataSource {
         if !list[indexPath.row].ad {
             let delete = UIContextualAction(style: .destructive, title: "삭제") { (actin, view, completion) in
                 self.list.remove(at: indexPath.row)
+                self.travelTableView.deleteRows(at: [indexPath], with: .fade)
                 tableView.reloadData()
                 completion(true)
             }
