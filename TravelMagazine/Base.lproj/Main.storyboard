@@ -355,6 +355,7 @@
                         <segue destination="cmG-gF-rTB" kind="relationship" relationship="viewControllers" id="NFd-go-J3K"/>
                         <segue destination="Guq-3F-DdI" kind="relationship" relationship="viewControllers" id="X8X-FA-ntt"/>
                         <segue destination="U4I-kn-APZ" kind="relationship" relationship="viewControllers" id="nrr-tS-7HC"/>
+                        <segue destination="CuO-UD-XV3" kind="relationship" relationship="viewControllers" id="Iy2-3R-IwF"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rft-am-k9J" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -570,12 +571,78 @@
             </objects>
             <point key="canvasLocation" x="1878.6259541984732" y="1620.4225352112676"/>
         </scene>
+        <!--인기 도시-->
+        <scene sceneID="0mX-fo-onB">
+            <objects>
+                <viewController id="hlH-3q-7az" customClass="PopularCityViewController" customModule="TravelMagazine" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="IOy-Zc-jYc">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="BUP-lz-zZa">
+                                <rect key="frame" x="0.0" y="194" width="393" height="575"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="hh6-kH-NSB">
+                                <rect key="frame" x="30" y="133" width="333" height="32"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="31" id="DxD-rH-JGJ"/>
+                                </constraints>
+                                <segments>
+                                    <segment title="First"/>
+                                    <segment title="Second"/>
+                                    <segment title=""/>
+                                </segments>
+                            </segmentedControl>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="iSc-2h-6Vg"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="BUP-lz-zZa" firstAttribute="leading" secondItem="iSc-2h-6Vg" secondAttribute="leading" id="8oC-QB-V9i"/>
+                            <constraint firstItem="iSc-2h-6Vg" firstAttribute="trailing" secondItem="BUP-lz-zZa" secondAttribute="trailing" id="b6f-MC-Vic"/>
+                            <constraint firstItem="hh6-kH-NSB" firstAttribute="top" secondItem="iSc-2h-6Vg" secondAttribute="top" constant="30" id="eh2-pq-JlK"/>
+                            <constraint firstItem="iSc-2h-6Vg" firstAttribute="trailing" secondItem="hh6-kH-NSB" secondAttribute="trailing" constant="30" id="fB0-n3-aSJ"/>
+                            <constraint firstItem="iSc-2h-6Vg" firstAttribute="bottom" secondItem="BUP-lz-zZa" secondAttribute="bottom" id="hdW-u2-6VC"/>
+                            <constraint firstItem="BUP-lz-zZa" firstAttribute="top" secondItem="hh6-kH-NSB" secondAttribute="bottom" constant="30" id="pkc-FW-mnJ"/>
+                            <constraint firstItem="hh6-kH-NSB" firstAttribute="leading" secondItem="iSc-2h-6Vg" secondAttribute="leading" constant="30" id="x3o-QN-VqE"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="인기 도시" id="0Kt-eC-tQV"/>
+                    <connections>
+                        <outlet property="countrySegmentedControl" destination="hh6-kH-NSB" id="dzf-21-B5C"/>
+                        <outlet property="tableView" destination="BUP-lz-zZa" id="WVn-Oi-3PS"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WRR-DF-2xL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2799.2366412213742" y="2336.6197183098593"/>
+        </scene>
+        <!--Popular-->
+        <scene sceneID="SjQ-nB-XTX">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="CuO-UD-XV3" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Popular" image="star" catalog="system" id="dOM-ka-VEe"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="T0w-TQ-15P">
+                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="hlH-3q-7az" kind="relationship" relationship="rootViewController" id="DRd-fi-HmQ"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Bya-km-UMG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1872.5190839694656" y="2336.6197183098593"/>
+        </scene>
     </scenes>
     <resources>
         <image name="airplane" catalog="system" width="128" height="115"/>
         <image name="building.2.fill" catalog="system" width="128" height="117"/>
         <image name="fork.knife.circle.fill" catalog="system" width="128" height="123"/>
         <image name="phone" catalog="system" width="128" height="115"/>
+        <image name="star" catalog="system" width="128" height="116"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
@@ -583,13 +650,13 @@
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemGray2Color">
-            <color red="0.68235294120000001" green="0.68235294120000001" blue="0.69803921570000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.68235294117647061" green="0.68235294117647061" blue="0.69803921568627447" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemGray6Color">
-            <color red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemPinkColor">
-            <color red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="1" green="0.17647058823529413" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemYellowColor">
             <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
