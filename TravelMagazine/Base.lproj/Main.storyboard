@@ -579,15 +579,19 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="Bxc-7A-SKL">
+                                <rect key="frame" x="12" y="103" width="369" height="56"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="hlH-3q-7az" id="epT-ZF-SAN"/>
+                                </connections>
+                            </searchBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="BUP-lz-zZa">
-                                <rect key="frame" x="0.0" y="194" width="393" height="575"/>
+                                <rect key="frame" x="0.0" y="206" width="393" height="563"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="hh6-kH-NSB">
-                                <rect key="frame" x="30" y="133" width="333" height="32"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="31" id="DxD-rH-JGJ"/>
-                                </constraints>
+                                <rect key="frame" x="28" y="167" width="337" height="32"/>
                                 <segments>
                                     <segment title="First"/>
                                     <segment title="Second"/>
@@ -598,18 +602,22 @@
                         <viewLayoutGuide key="safeArea" id="iSc-2h-6Vg"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="BUP-lz-zZa" firstAttribute="leading" secondItem="iSc-2h-6Vg" secondAttribute="leading" id="8oC-QB-V9i"/>
-                            <constraint firstItem="iSc-2h-6Vg" firstAttribute="trailing" secondItem="BUP-lz-zZa" secondAttribute="trailing" id="b6f-MC-Vic"/>
-                            <constraint firstItem="hh6-kH-NSB" firstAttribute="top" secondItem="iSc-2h-6Vg" secondAttribute="top" constant="30" id="eh2-pq-JlK"/>
-                            <constraint firstItem="iSc-2h-6Vg" firstAttribute="trailing" secondItem="hh6-kH-NSB" secondAttribute="trailing" constant="30" id="fB0-n3-aSJ"/>
-                            <constraint firstItem="iSc-2h-6Vg" firstAttribute="bottom" secondItem="BUP-lz-zZa" secondAttribute="bottom" id="hdW-u2-6VC"/>
-                            <constraint firstItem="BUP-lz-zZa" firstAttribute="top" secondItem="hh6-kH-NSB" secondAttribute="bottom" constant="30" id="pkc-FW-mnJ"/>
-                            <constraint firstItem="hh6-kH-NSB" firstAttribute="leading" secondItem="iSc-2h-6Vg" secondAttribute="leading" constant="30" id="x3o-QN-VqE"/>
+                            <constraint firstItem="iSc-2h-6Vg" firstAttribute="trailing" secondItem="Bxc-7A-SKL" secondAttribute="trailing" constant="12" id="4c1-Zp-6ps"/>
+                            <constraint firstItem="hh6-kH-NSB" firstAttribute="leading" secondItem="iSc-2h-6Vg" secondAttribute="leading" constant="28" id="5DG-Jb-ULz"/>
+                            <constraint firstItem="hh6-kH-NSB" firstAttribute="top" secondItem="Bxc-7A-SKL" secondAttribute="bottom" constant="8" id="Mdt-Cd-7se"/>
+                            <constraint firstItem="BUP-lz-zZa" firstAttribute="trailing" secondItem="iSc-2h-6Vg" secondAttribute="trailing" id="MfW-Zx-ZYJ"/>
+                            <constraint firstItem="iSc-2h-6Vg" firstAttribute="trailing" secondItem="hh6-kH-NSB" secondAttribute="trailing" constant="28" id="OCY-bh-KZj"/>
+                            <constraint firstItem="BUP-lz-zZa" firstAttribute="leading" secondItem="iSc-2h-6Vg" secondAttribute="leading" id="SPX-d2-KPd"/>
+                            <constraint firstItem="BUP-lz-zZa" firstAttribute="top" secondItem="hh6-kH-NSB" secondAttribute="bottom" constant="8" id="h7q-3m-eQF"/>
+                            <constraint firstItem="Bxc-7A-SKL" firstAttribute="leading" secondItem="iSc-2h-6Vg" secondAttribute="leading" constant="12" id="lq3-Dj-KbQ"/>
+                            <constraint firstItem="BUP-lz-zZa" firstAttribute="bottom" secondItem="iSc-2h-6Vg" secondAttribute="bottom" id="nen-Ou-jFW"/>
+                            <constraint firstItem="Bxc-7A-SKL" firstAttribute="top" secondItem="iSc-2h-6Vg" secondAttribute="top" id="v23-gT-8L1"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="인기 도시" id="0Kt-eC-tQV"/>
                     <connections>
                         <outlet property="countrySegmentedControl" destination="hh6-kH-NSB" id="dzf-21-B5C"/>
+                        <outlet property="searchBar" destination="Bxc-7A-SKL" id="w8m-Al-jHh"/>
                         <outlet property="tableView" destination="BUP-lz-zZa" id="WVn-Oi-3PS"/>
                     </connections>
                 </viewController>

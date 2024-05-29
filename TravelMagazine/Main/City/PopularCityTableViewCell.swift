@@ -11,7 +11,7 @@ import Kingfisher
 class PopularCityTableViewCell: UITableViewCell {
     
     static let identifier: String = "PopularCityTableViewCell"
-
+    
     @IBOutlet var overlayView: UIView!
     @IBOutlet var cellBackgroundView: UIView!
     @IBOutlet var cityImageView: UIImageView!
@@ -36,18 +36,32 @@ class PopularCityTableViewCell: UITableViewCell {
         super.layoutSubviews()
         cellBackgroundView.layoutIfNeeded()
     }
-
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
     }
     
-    public func setData(data: City){
+    public func setData(data: City, searchText: String?){
+        
         if let url = URL(string: data.city_image) {
             cityImageView.kf.setImage(with: url)
         }
         
-        titleLabel.text = data.title
-        citiesListLabel.text = data.city_explain
+        titleLabel.attributedText = data.title.highlightSearchText(searchText: searchText)
+        citiesListLabel.attributedText = data.city_explain.highlightSearchText(searchText: searchText)
     }
     
+}
+
+extension String {
+    func highlightSearchText(searchText: String?) -> NSAttributedString {
+        guard let searchKey = searchText?.lowercased(), !searchKey.isEmpty else {
+            return NSAttributedString(string: self)
+        }
+        
+        let attributedString = NSMutableAttributedString(string: self)
+        attributedString.addAttribute(.backgroundColor, value: UIColor(hexCode: "5FC3A6"), range: (self as NSString).range(of: searchKey, options: .caseInsensitive))
+        
+        return attributedString
+    }
 }

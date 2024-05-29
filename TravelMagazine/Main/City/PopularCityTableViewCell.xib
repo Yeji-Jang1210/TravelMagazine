@@ -55,7 +55,6 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="172" id="3Ie-fK-IWJ"/>
                             <constraint firstItem="2HQ-rj-r8V" firstAttribute="leading" secondItem="GnZ-d5-7Lz" secondAttribute="leading" id="COr-34-uAX"/>
                             <constraint firstItem="xg1-Fu-lYi" firstAttribute="leading" secondItem="GnZ-d5-7Lz" secondAttribute="leading" id="DX1-Gb-RCL"/>
                             <constraint firstAttribute="trailing" secondItem="2HQ-rj-r8V" secondAttribute="trailing" id="Hh3-qr-0xm"/>
