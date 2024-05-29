@@ -14,6 +14,10 @@ struct Magazine {
     let date: String
     let link: String
     
+    
+    
+    
+    //use DateFormatter
     var dateFormat: String {
         guard let date = convertStringToDate(date) else {
             return ""

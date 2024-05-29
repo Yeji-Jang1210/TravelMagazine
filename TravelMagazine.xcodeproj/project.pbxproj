@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B85F48A12C06FE7200B8853D /* TravelDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B85F48A02C06FE7200B8853D /* TravelDetailViewController.swift */; };
+		B85F48A32C06FE8700B8853D /* AdDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B85F48A22C06FE8700B8853D /* AdDetailViewController.swift */; };
 		B89B907B2C023A9E007A7DE1 /* Restaurant.swift in Sources */ = {isa = PBXBuildFile; fileRef = B89B907A2C023A9E007A7DE1 /* Restaurant.swift */; };
 		B8C71BA22C01B341007C15C4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8C71BA12C01B341007C15C4 /* AppDelegate.swift */; };
 		B8C71BA42C01B341007C15C4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8C71BA32C01B341007C15C4 /* SceneDelegate.swift */; };
@@ -32,6 +34,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B85F48A02C06FE7200B8853D /* TravelDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravelDetailViewController.swift; sourceTree = "<group>"; };
+		B85F48A22C06FE8700B8853D /* AdDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdDetailViewController.swift; sourceTree = "<group>"; };
 		B89B907A2C023A9E007A7DE1 /* Restaurant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Restaurant.swift; sourceTree = "<group>"; };
 		B8C71B9E2C01B341007C15C4 /* TravelMagazine.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TravelMagazine.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B8C71BA12C01B341007C15C4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -145,8 +149,10 @@
 				B8F1D2B22C046BD90015FD0B /* TravelViewController.swift */,
 				B8F1D2A72C045F3C0015FD0B /* TravelTableViewCell.swift */,
 				B8F1D2A82C045F3C0015FD0B /* TravelTableViewCell.xib */,
+				B85F48A02C06FE7200B8853D /* TravelDetailViewController.swift */,
 				B8F1D2AB2C045F4B0015FD0B /* AdTableViewCell.swift */,
 				B8F1D2AC2C045F4B0015FD0B /* AdTableViewCell.xib */,
+				B85F48A22C06FE8700B8853D /* AdDetailViewController.swift */,
 			);
 			path = Travel;
 			sourceTree = "<group>";
@@ -256,8 +262,10 @@
 				B8F1D2A32C045B760015FD0B /* UIColor+Extension.swift in Sources */,
 				B89B907B2C023A9E007A7DE1 /* Restaurant.swift in Sources */,
 				B8C71BC12C01B556007C15C4 /* MagazineTableViewController.swift in Sources */,
+				B85F48A12C06FE7200B8853D /* TravelDetailViewController.swift in Sources */,
 				B8F1D2AE2C045F4B0015FD0B /* AdTableViewCell.swift in Sources */,
 				B8C71BA22C01B341007C15C4 /* AppDelegate.swift in Sources */,
+				B85F48A32C06FE8700B8853D /* AdDetailViewController.swift in Sources */,
 				B8F89F5F2C0383330068B0AA /* RestaurantManager.swift in Sources */,
 				B8F1D2B32C046BD90015FD0B /* TravelViewController.swift in Sources */,
 				B8F89F5A2C0251B00068B0AA /* RestaurantTableViewController.swift in Sources */,

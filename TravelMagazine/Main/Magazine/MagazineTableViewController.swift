@@ -7,16 +7,18 @@
 
 import UIKit
 
+// A -> B
+
 class MagazineTableViewController: UITableViewController {
     
-    var navigationItemImageView: UIImageView {
+    var navigationItemImageView: UIImageView = {
         let object = UIImageView()
         object.frame = CGRect(x: 0, y: 0, width: 30, height: 30)
         object.image = UIImage(systemName: "ellipsis")
         object.contentMode = .scaleAspectFit
         object.tintColor = .lightGray
         return object
-    }
+    }()
     
     var navigationItemTitle: UILabel {
         let object = UILabel()

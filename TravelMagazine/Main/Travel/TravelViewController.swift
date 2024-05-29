@@ -37,10 +37,6 @@ class TravelViewController: UIViewController {
 }
 
 extension TravelViewController: UITableViewDelegate, UITableViewDataSource {
-//    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-//        return list[indexPath.row].ad ? 80 : 180
-//    }
-    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         list.count
     }
@@ -83,5 +79,21 @@ extension TravelViewController: UITableViewDelegate, UITableViewDataSource {
             return UISwipeActionsConfiguration(actions: [delete])
         }
         return nil
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let data = list[indexPath.row]
+        if !data.ad {
+            let vc = storyboard?.instantiateViewController(withIdentifier: TravelDetailViewController.identifier) as! TravelDetailViewController
+            vc.data = data
+            navigationController?.pushViewController(vc, animated: true)
+        } else {
+            let vc = storyboard?.instantiateViewController(withIdentifier: AdDetailViewController.identifier) as! AdDetailViewController
+            let nvc = UINavigationController(rootViewController: vc)
+            nvc.modalPresentationStyle = .fullScreen
+            nvc.modalTransitionStyle = .coverVertical
+            present(nvc, animated: true)
+            
+        }
     }
 }
