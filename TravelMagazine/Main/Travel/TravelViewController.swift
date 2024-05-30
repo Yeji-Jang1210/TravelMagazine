@@ -89,9 +89,12 @@ extension TravelViewController: UITableViewDelegate, UITableViewDataSource {
             navigationController?.pushViewController(vc, animated: true)
         } else {
             let vc = storyboard?.instantiateViewController(withIdentifier: AdDetailViewController.identifier) as! AdDetailViewController
+            vc.content = data.title
+            
             let nvc = UINavigationController(rootViewController: vc)
             nvc.modalPresentationStyle = .fullScreen
             nvc.modalTransitionStyle = .coverVertical
+            
             present(nvc, animated: true)
             
         }

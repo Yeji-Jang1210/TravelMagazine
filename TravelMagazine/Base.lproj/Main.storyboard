@@ -558,7 +558,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="광고중" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WyI-6a-AWz">
-                                <rect key="frame" x="165.33333333333334" y="412.33333333333331" width="62.333333333333343" height="27.666666666666686"/>
+                                <rect key="frame" x="20" y="412.33333333333331" width="353" height="27.666666666666686"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -567,10 +567,14 @@
                         <viewLayoutGuide key="safeArea" id="V8w-4J-5TY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="WyI-6a-AWz" firstAttribute="centerX" secondItem="Eho-ti-azr" secondAttribute="centerX" id="1iE-rJ-bZM"/>
-                            <constraint firstItem="WyI-6a-AWz" firstAttribute="centerY" secondItem="Eho-ti-azr" secondAttribute="centerY" id="YDC-6A-b9P"/>
+                            <constraint firstItem="WyI-6a-AWz" firstAttribute="leading" secondItem="V8w-4J-5TY" secondAttribute="leading" constant="20" id="9I3-5w-IjD"/>
+                            <constraint firstItem="V8w-4J-5TY" firstAttribute="trailing" secondItem="WyI-6a-AWz" secondAttribute="trailing" constant="20" id="ErG-5g-84I"/>
+                            <constraint firstItem="WyI-6a-AWz" firstAttribute="centerY" secondItem="Eho-ti-azr" secondAttribute="centerY" id="sgc-dk-v6U"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="contentLabel" destination="WyI-6a-AWz" id="H2W-4t-5rn"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Cua-La-NeE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

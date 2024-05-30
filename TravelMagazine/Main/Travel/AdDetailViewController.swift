@@ -10,10 +10,15 @@ import UIKit
 class AdDetailViewController: UIViewController {
     
     static let identifier: String = "AdDetailViewController"
-
+    
+    @IBOutlet var contentLabel: UILabel!
+    var content: String?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         configureNavigationItem()
+        contentLabel.text = content
+        contentLabel.numberOfLines = 0
     }
     
     private func configureNavigationItem(){
