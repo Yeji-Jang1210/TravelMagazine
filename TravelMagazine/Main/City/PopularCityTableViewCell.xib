@@ -17,6 +17,10 @@
                 <rect key="frame" x="0.0" y="0.0" width="429" height="196"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Czk-I1-ixP">
+                        <rect key="frame" x="12" y="12" width="405" height="172"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GnZ-d5-7Lz">
                         <rect key="frame" x="12" y="12" width="405" height="172"/>
                         <subviews>
@@ -72,10 +76,14 @@
                     </view>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="GnZ-d5-7Lz" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="12" id="5ZC-Ey-Vin"/>
-                    <constraint firstAttribute="trailing" secondItem="GnZ-d5-7Lz" secondAttribute="trailing" constant="12" id="JX9-mK-BzB"/>
-                    <constraint firstItem="GnZ-d5-7Lz" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="12" id="RYB-PD-tiN"/>
-                    <constraint firstAttribute="bottom" secondItem="GnZ-d5-7Lz" secondAttribute="bottom" constant="12" id="XKu-xQ-XV6"/>
+                    <constraint firstItem="GnZ-d5-7Lz" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="12" id="Ftz-vw-zRH"/>
+                    <constraint firstAttribute="bottom" secondItem="Czk-I1-ixP" secondAttribute="bottom" constant="12" id="LwC-Nh-5Y8"/>
+                    <constraint firstAttribute="trailing" secondItem="Czk-I1-ixP" secondAttribute="trailing" constant="12" id="NzP-fC-vdk"/>
+                    <constraint firstItem="GnZ-d5-7Lz" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="12" id="Q7B-9x-w4X"/>
+                    <constraint firstAttribute="trailing" secondItem="GnZ-d5-7Lz" secondAttribute="trailing" constant="12" id="SXN-Yd-eM3"/>
+                    <constraint firstItem="Czk-I1-ixP" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="12" id="XOw-fN-f6q"/>
+                    <constraint firstAttribute="bottom" secondItem="GnZ-d5-7Lz" secondAttribute="bottom" constant="12" id="bRd-sF-ZyN"/>
+                    <constraint firstItem="Czk-I1-ixP" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="12" id="tea-Go-omp"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
@@ -84,6 +92,7 @@
                 <outlet property="citiesListLabel" destination="amf-OS-edU" id="5F6-zg-KXZ"/>
                 <outlet property="cityImageView" destination="AJL-5l-rRt" id="lAG-3l-o2X"/>
                 <outlet property="overlayView" destination="xg1-Fu-lYi" id="NOc-x3-w8y"/>
+                <outlet property="shadowView" destination="Czk-I1-ixP" id="baF-up-PXK"/>
                 <outlet property="titleLabel" destination="zuu-Ce-bge" id="XrT-IZ-kem"/>
             </connections>
             <point key="canvasLocation" x="12.977099236641221" y="69.718309859154928"/>

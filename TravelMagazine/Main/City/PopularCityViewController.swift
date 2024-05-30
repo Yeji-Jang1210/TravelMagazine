@@ -65,7 +65,9 @@ class PopularCityViewController: UIViewController {
         filteredCountry(index: countrySegmentedControl.selectedSegmentIndex)
         
         //아무것도 입력하지 않은 경우
-        if text.isEmpty { return }
+        if text.isEmpty { 
+            tableView.reloadData()
+            return }
         
         var searchResult = filteredList.filter({$0.city_name.lowercased().contains(text) ||
             $0.city_english_name.lowercased().contains(text) ||

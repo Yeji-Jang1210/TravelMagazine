@@ -12,6 +12,7 @@ class PopularCityTableViewCell: UITableViewCell {
     
     static let identifier: String = "PopularCityTableViewCell"
     
+    @IBOutlet var shadowView: UIView!
     @IBOutlet var overlayView: UIView!
     @IBOutlet var cellBackgroundView: UIView!
     @IBOutlet var cityImageView: UIImageView!
@@ -30,11 +31,18 @@ class PopularCityTableViewCell: UITableViewCell {
         cellBackgroundView.clipsToBounds = true
         cellBackgroundView.layer.cornerRadius = 24
         cellBackgroundView.layer.maskedCorners = CACornerMask(arrayLiteral: .layerMinXMinYCorner, .layerMaxXMaxYCorner)
+ 
+        //shadowView 설정
+        shadowView.layer.cornerRadius = 24
+        shadowView.layer.maskedCorners = CACornerMask(arrayLiteral: .layerMinXMinYCorner, .layerMaxXMaxYCorner)
+        shadowView.layer.shadowOffset = CGSize(width: 4, height: 4)
+        shadowView.layer.shadowRadius = 4
+        shadowView.layer.shadowOpacity = 0.5
     }
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        cellBackgroundView.layoutIfNeeded()
+        configureBackgroundView()
     }
     
     override func setSelected(_ selected: Bool, animated: Bool) {
