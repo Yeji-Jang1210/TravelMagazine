@@ -18,6 +18,10 @@ struct Restaurant {
     let category: String
     let price: Int
     let type: Int
+    
+    var mapViewTitle: String {
+        return "\(name) | \(category)"
+    }
 }
 
 struct RestaurantList {

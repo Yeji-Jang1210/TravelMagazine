@@ -25,7 +25,7 @@ class RestaurantTableViewController: UITableViewController {
         super.viewDidLoad()
         self.tableView.rowHeight = UITableView.automaticDimension
         self.tableView.estimatedRowHeight = 383
-        
+        setNavigationRightItem()
         setSearchUI()
         setMenuButtonUI()
     }
@@ -58,6 +58,10 @@ class RestaurantTableViewController: UITableViewController {
         priceButton.showsMenuAsPrimaryAction = true
     }
     
+    func setNavigationRightItem(){
+        navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "map"), style: .plain, target: self, action: #selector(presentMapView))
+    }
+    
     @objc func searchRestaurant(_ sender: Any){
         guard let text = searchTextField.text, !text.isEmpty else { return }
         
@@ -65,6 +69,11 @@ class RestaurantTableViewController: UITableViewController {
         searchTextField.text = ""
         view.endEditing(true)
         tableView.reloadData()
+    }
+    
+    @objc func presentMapView(){
+        let vc = storyboard?.instantiateViewController(identifier: "RestaurantLocationViewController") as! RestaurantLocationViewController
+        navigationController?.pushViewController(vc, animated: true)
     }
     
     func categoryTapped(_ sender: UIAction){
@@ -121,7 +130,7 @@ extension RestaurantTableViewController {
         
         cell.likeButton.addTarget(self, action: #selector(likeButtonTapped), for: .touchUpInside)
         cell.phoneNumberButton.addTarget(self, action: #selector(phoneNumberButtonTapped), for: .touchUpInside)
-        cell.setUI(image: restaurant.image, title: restaurant.name, type: restaurant.category, address: restaurant.address, phoneNumber: restaurant.phoneNumber, price: restaurant.price, liked: controller.likeList[restaurant.name])
+        cell.setUI(data: restaurant, liked: controller.likeList[restaurant.name])
         
         return cell
         

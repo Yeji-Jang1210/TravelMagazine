@@ -4,6 +4,7 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22684"/>
         <capability name="Image references" minToolsVersion="12.0"/>
+        <capability name="Map view configurations" minToolsVersion="14.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="UIMenu" message="Requires Xcode 11 or later." minToolsVersion="11.0" requiredIntegratedClassName="UICommandDiff"/>
@@ -153,7 +154,7 @@
                                     <rect key="frame" x="20" y="74" width="280" height="24"/>
                                     <subviews>
                                         <button opaque="NO" contentMode="scaleToFill" showsMenuAsPrimaryAction="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nSp-Nt-bGe">
-                                            <rect key="frame" x="0.0" y="0.0" width="70.666666666666671" height="24"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="92.666666666666671" height="24"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="24" id="cA1-Qz-0t8"/>
                                             </constraints>
@@ -169,7 +170,7 @@
                                             <state key="normal" title="음식종류"/>
                                         </button>
                                         <button opaque="NO" contentMode="scaleToFill" showsMenuAsPrimaryAction="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HQK-OE-KP7">
-                                            <rect key="frame" x="78.666666666666671" y="0.0" width="47.333333333333329" height="24"/>
+                                            <rect key="frame" x="100.66666666666667" y="0.0" width="61.666666666666671" height="24"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                             <color key="tintColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <menu key="menu" id="HVk-Wu-OaL">
@@ -181,7 +182,7 @@
                                             <state key="normal" title="가격"/>
                                         </button>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0T9-pv-Ml7">
-                                            <rect key="frame" x="134" y="0.0" width="70.666666666666686" height="24"/>
+                                            <rect key="frame" x="170.33333333333334" y="0.0" width="109.66666666666666" height="24"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                             <color key="tintColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
@@ -189,13 +190,6 @@
                                             <connections>
                                                 <action selector="likeListButtonTapped:" destination="HxF-4P-xMr" eventType="touchUpInside" id="etn-oH-Rje"/>
                                             </connections>
-                                        </button>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CGf-l4-rPx">
-                                            <rect key="frame" x="212.66666666666666" y="0.0" width="67.333333333333343" height="24"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                            <color key="tintColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                            <state key="normal" title="거리순"/>
                                         </button>
                                     </subviews>
                                 </stackView>
@@ -338,6 +332,36 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="d2z-Zo-BCI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2812" y="888"/>
+        </scene>
+        <!--Restaurant Location View Controller-->
+        <scene sceneID="eOD-ty-RXf">
+            <objects>
+                <viewController storyboardIdentifier="RestaurantLocationViewController" id="e0w-FB-zTS" customClass="RestaurantLocationViewController" customModule="TravelMagazine" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="xAB-7D-ymq">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aLf-4A-Xnh">
+                                <rect key="frame" x="0.0" y="59" width="393" height="759"/>
+                                <standardMapConfiguration key="preferredConfiguration"/>
+                            </mapView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="9jH-Vu-DuF"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="9jH-Vu-DuF" firstAttribute="trailing" secondItem="aLf-4A-Xnh" secondAttribute="trailing" id="26P-ge-c9P"/>
+                            <constraint firstItem="aLf-4A-Xnh" firstAttribute="leading" secondItem="9jH-Vu-DuF" secondAttribute="leading" id="55o-Lh-omm"/>
+                            <constraint firstItem="9jH-Vu-DuF" firstAttribute="bottom" secondItem="aLf-4A-Xnh" secondAttribute="bottom" id="Uc5-eW-YKd"/>
+                            <constraint firstItem="aLf-4A-Xnh" firstAttribute="top" secondItem="9jH-Vu-DuF" secondAttribute="top" id="dO2-bu-Xe8"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="mapView" destination="aLf-4A-Xnh" id="Jap-gd-Qfx"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bGh-cJ-HfN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3589" y="887"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="whw-WG-hb1">

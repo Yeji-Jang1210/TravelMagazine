@@ -24,16 +24,16 @@ class RestaurantTableViewCell: UITableViewCell {
         photoImageView.layer.cornerRadius = 4
     }
     
-    public func setUI(image: String, title: String, type: String, address: String, phoneNumber: String, price: Int, liked: Bool? = false){
+    public func setUI(data: Restaurant, liked: Bool? = false){
         
-        let url = URL(string: image)
+        let url = URL(string: data.image)
         photoImageView.kf.setImage(with: url)
         
-        titleLabel.text = title
-        foodTypeLabel.text = type
-        addressLabel.text = address
-        phoneNumberButton.titleLabel?.text = phoneNumber
-        priceLabel.text = price.formatted()
+        titleLabel.text = data.name
+        foodTypeLabel.text = data.category
+        addressLabel.text = data.address
+        phoneNumberButton.titleLabel?.text = data.phoneNumber
+        priceLabel.text = data.price.formatted()
         
         if let liked {
             let image = liked ? "heart.fill" : "heart"
