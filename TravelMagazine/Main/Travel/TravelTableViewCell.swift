@@ -10,7 +10,7 @@ import Cosmos
 import Kingfisher
 
 class TravelTableViewCell: UITableViewCell {
-
+    
     @IBOutlet var nameLabel: UILabel!
     @IBOutlet var descriptionLabel: UILabel!
     @IBOutlet var starRateView: CosmosView!
@@ -22,10 +22,23 @@ class TravelTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        configureLabel()
+        
         travelImageView.backgroundColor = .lightGray
         travelImageView.contentMode = .scaleAspectFill
         travelImageView.layer.cornerRadius = 15
         starRateView.settings.updateOnTouch = false
+    }
+    
+    func configureLabel(){
+        nameLabel.font = FontManager.title.font
+        nameLabel.textColor = FontManager.title.color
+        
+        descriptionLabel.font = FontManager.subTitle.font
+        descriptionLabel.textColor = FontManager.subTitle.color
+        
+        reviewLabel.font = FontManager.discription.font
+        reviewLabel.textColor = FontManager.discription.color
     }
     
     func setLayout(data: Travel){

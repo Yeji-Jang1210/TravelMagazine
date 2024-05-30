@@ -78,7 +78,7 @@ class RestaurantTableViewController: UITableViewController {
     
     func categoryTapped(_ sender: UIAction){
         categoryButton.setTitle(sender.title, for: .normal)
-        controller.category = FoodCategory(rawValue: sender.title) ??  .all
+        controller.category = FoodCategory(rawValue: sender.title) ?? .all
         tableView.reloadData()
     }
     
