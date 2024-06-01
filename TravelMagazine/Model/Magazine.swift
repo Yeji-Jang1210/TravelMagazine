@@ -14,24 +14,9 @@ struct Magazine {
     let date: String
     let link: String
     
-    
-    
-    
     //use DateFormatter
     var dateFormat: String {
-        guard let date = convertStringToDate(date) else {
-            return ""
-        }
-        
-        let dateFormat = DateFormatter()
-        dateFormat.dateFormat = "yy년 MM월 dd일"
-        return dateFormat.string(from: date)
-    }
-    
-    private func convertStringToDate(_ text: String) -> Date? {
-        let dateFormat = DateFormatter()
-        dateFormat.dateFormat = "yyMMdd"
-        
-        return dateFormat.date(from: text)
+        guard let date = date.convertStringToDate("yyMMdd") else { return "" }
+        return date.convertDateToString("yy년 MM월 dd일") ?? ""
     }
 }

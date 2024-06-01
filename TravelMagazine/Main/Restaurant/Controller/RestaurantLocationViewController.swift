@@ -74,10 +74,6 @@ class RestaurantLocationViewController: UIViewController {
     }
 }
 
-extension RestaurantLocationViewController: MKMapViewDelegate {
-    
-}
-
 class CustomAnnotation: NSObject, MKAnnotation{
     @objc dynamic var coordinate: CLLocationCoordinate2D
     var title: String?
