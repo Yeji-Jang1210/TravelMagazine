@@ -90,7 +90,10 @@ extension TravelTalkViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print(talkList[indexPath.row])
+        let vc = storyboard?.instantiateViewController(withIdentifier: ChatDetailViewController.identifier) as! ChatDetailViewController
+        vc.chatRoom = talkList[indexPath.row]
+        
+        navigationController?.pushViewController(vc, animated: true)
     }
     
     

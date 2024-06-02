@@ -40,6 +40,11 @@ struct Chat {
     let user: User
     let date: String
     let message: String
+    
+    var chatBubbleTime: String {
+        guard let time = date.convertStringToDate("yyyy-MM-dd HH:mm") else { return "" }
+        return time.convertDateToString("HH:mm a") ?? ""
+    }
 }
 
 

@@ -8,9 +8,12 @@
 import Foundation
 
 extension String {
-    func convertStringToDate(_ dateStyle: String) -> Date? {
+    func convertStringToDate(_ dateFormatStyle: String) -> Date? {
         let dateFormat = DateFormatter()
-        dateFormat.dateFormat = dateStyle
+        
+        //20240601 local정보 UserDefaultsManager만들어서 관리하기
+        dateFormat.locale = Locale(identifier: "ko_KR")
+        dateFormat.dateFormat = dateFormatStyle
         
         return dateFormat.date(from: self)
     }
