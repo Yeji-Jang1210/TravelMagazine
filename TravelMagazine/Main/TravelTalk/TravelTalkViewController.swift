@@ -25,6 +25,13 @@ class TravelTalkViewController: UIViewController {
         configureUI()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        if let selectedIndexPath = talkListTableView.indexPathForSelectedRow {
+               talkListTableView.deselectRow(at: selectedIndexPath, animated: true)
+           }
+    }
+    
     private func configureUI(){
         navigationItem.title = "TRAVEL TALK"
         configureTableView()
