@@ -30,7 +30,7 @@ struct ChatRoom {
     var chatList: [Chat] = [] //채팅 화면에서 사용할 데이터
     
     var chatRoomDate: String {
-        guard let date = chatList.first?.date.convertStringToDate("yyyy-MM-dd HH:mm") else { return "" }
+        guard let date = chatList.last?.date.convertStringToDate("yyyy-MM-dd HH:mm") else { return "" }
         return date.convertDateToString("yy.MM.dd") ?? ""
     }
 }

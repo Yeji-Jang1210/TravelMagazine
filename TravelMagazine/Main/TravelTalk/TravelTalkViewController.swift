@@ -39,10 +39,12 @@ class TravelTalkViewController: UIViewController {
         talkListTableView.delegate = self
         talkListTableView.dataSource = self
         talkListTableView.register(xib, forCellReuseIdentifier: TravelTalkTableViewCell.identifier)
+        
+        //tableView를 scroll 할 때 keyboard가 내려가는 동작
+        talkListTableView.keyboardDismissMode = .onDrag
     }
     
     private func configureSearchObjects(){
-        
         searchBackgroundView.backgroundColor = .systemGray6
         searchBackgroundView.layer.cornerRadius = 10
         
@@ -57,6 +59,7 @@ class TravelTalkViewController: UIViewController {
     }
     
     @objc func searchChatRoom(_ sender: Any?){
+        print(#function)
         guard let keyword = searchTextField.text, !keyword.isEmpty else {
             talkList = mockChatList
             return

@@ -35,12 +35,3 @@ class AdTableViewCell: UITableViewCell {
     }
     
 }
-
-enum AdColor: String, CaseIterable {
-    case F6BD60
-    case F7EDE2
-    
-    var color: UIColor {
-        return UIColor(hexCode: self.rawValue)
-    }
-}

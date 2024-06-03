@@ -78,7 +78,7 @@ class TravelTalkTableViewCell: UITableViewCell {
     public func fetchData(_ data: ChatRoom){
         setChatRoomImage(imageList: data.chatroomImage)
         nicknameLabel.text = data.chatroomName
-        talkLabel.text = data.chatList.first?.message ?? ""
+        talkLabel.text = data.chatList.last?.message
         dateLabel.text = data.chatRoomDate
     }
     
