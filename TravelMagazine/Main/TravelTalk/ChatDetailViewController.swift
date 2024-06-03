@@ -54,6 +54,7 @@ class ChatDetailViewController: UIViewController {
     private func configureUI(){
         let gesture = UITapGestureRecognizer(target: self, action: #selector(keyboardDismiss))
         view.addGestureRecognizer(gesture)
+        configureNavigationBar()
         configureTableView()
         configureTextField()
         registerKeyboardNotifications()
@@ -70,6 +71,13 @@ class ChatDetailViewController: UIViewController {
     
     @objc func keyboardDismiss(){
         view.endEditing(true)
+    }
+    
+    private func configureNavigationBar(){
+        let dismissButton = UIBarButtonItem(image: UIImage(systemName: "chevron.backward"), style: .done, target: self, action: #selector(backButtonTapped))
+        dismissButton.tintColor = .label
+        navigationItem.leftBarButtonItem = dismissButton
+        navigationItem.title = chatRoom?.chatroomName
     }
     
     private func configureTableView(){
@@ -103,6 +111,10 @@ class ChatDetailViewController: UIViewController {
         //placeholder
         isTextViewEmpty = true
         chatPlaceholder.textColor = .lightGray
+    }
+    
+    @objc func backButtonTapped(_ sender: UIButton){
+        navigationController?.popViewController(animated: true)
     }
     
     @objc private func sendMessage(_ sender: UIButton){
