@@ -11,10 +11,11 @@ class OtherChatBubble: UITableViewCell {
     
     static var identifier: String = String(describing: OtherChatBubble.self)
     
+    @IBOutlet var messageLabel: UILabel!
     @IBOutlet var profileImageView: UIImageView!
     @IBOutlet var nicknameLabel: UILabel!
     @IBOutlet var chatBubbleBackground: UIView!
-    @IBOutlet var chatBubbleTextView: UITextView!
+    
     @IBOutlet var timeLabel: UILabel!
     
     override func awakeFromNib() {
@@ -39,17 +40,13 @@ class OtherChatBubble: UITableViewCell {
         chatBubbleBackground.layer.borderWidth = ChatManager.chatBubbleBorderWidth
         chatBubbleBackground.layer.borderColor = ChatManager.chatBubbleBorderColor
         
-        chatBubbleTextView.text = nil
-        chatBubbleTextView.isScrollEnabled = false
-        chatBubbleTextView.isEditable = false
-        chatBubbleTextView.isSelectable = false
-        chatBubbleTextView.font = ChatManager.chatFont
+        messageLabel.text = nil
+        messageLabel.font = ChatManager.chatFont
+        messageLabel.numberOfLines = 0
         
         timeLabel.text = nil
         timeLabel.textColor = ChatManager.timeFontColor
         timeLabel.font = ChatManager.timeFont
-        
-        chatBubbleBackground.backgroundColor = ChatManager.chatBubbleTextViewBackgroundColor
     }
     
     private func reloadUI(){
@@ -60,7 +57,7 @@ class OtherChatBubble: UITableViewCell {
     public func fetchData(_ bubble: Chat){
         profileImageView.image = UIImage(named: bubble.user.profileImage)
         nicknameLabel.text = bubble.user.rawValue
-        chatBubbleTextView.text = bubble.message
+        messageLabel.text = bubble.message
         timeLabel.text = bubble.chatBubbleTime
     }
 }

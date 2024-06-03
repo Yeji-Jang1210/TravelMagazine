@@ -10,8 +10,8 @@ import UIKit
 class UserChatBubble: UITableViewCell {
     
     static var identifier: String = String(describing: UserChatBubble.self)
-
-    @IBOutlet var chatBubbleTextView: UITextView!
+    
+    @IBOutlet var messageLabel: UILabel!
     @IBOutlet var chatBubbleBackground: UIView!
     @IBOutlet var timeLabel: UILabel!
     
@@ -30,17 +30,13 @@ class UserChatBubble: UITableViewCell {
         chatBubbleBackground.layer.borderWidth = ChatManager.chatBubbleBorderWidth
         chatBubbleBackground.layer.borderColor = ChatManager.chatBubbleBorderColor
         
-        chatBubbleTextView.text = nil
-        chatBubbleTextView.isScrollEnabled = false
-        chatBubbleTextView.isEditable = false
-        chatBubbleTextView.isSelectable = false
-        chatBubbleTextView.font = ChatManager.chatFont
+        messageLabel.text = nil
+        messageLabel.font = ChatManager.chatFont
+        messageLabel.numberOfLines = 0
         
         timeLabel.text = nil
         timeLabel.textColor = ChatManager.timeFontColor
         timeLabel.font = ChatManager.timeFont
-        
-        chatBubbleTextView.backgroundColor = ChatManager.chatBubbleTextViewBackgroundColor
     }
     
     private func reloadUI(){
@@ -48,7 +44,7 @@ class UserChatBubble: UITableViewCell {
     }
     
     public func fetchData(_ bubble: Chat){
-        chatBubbleTextView.text = bubble.message
+        messageLabel.text = bubble.message
         timeLabel.text = bubble.chatBubbleTime
     }
 }
@@ -56,8 +52,7 @@ class UserChatBubble: UITableViewCell {
 class ChatManager {
     static var nicknameFont = UIFont.systemFont(ofSize: 16, weight: .semibold)
     
-    static var chatBubbleTextViewBackgroundColor = UIColor.clear
-    static var chatBubbleCornerRadius:CGFloat = 20
+    static var chatBubbleCornerRadius:CGFloat = 12
     static var chatBubbleBorderWidth:CGFloat = 1
     static var chatBubbleBorderColor = UIColor.darkGray.cgColor
     
