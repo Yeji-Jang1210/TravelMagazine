@@ -13,14 +13,14 @@ class ChatDetailViewController: UIViewController {
     
     @IBOutlet var chatBackgroundView: UIView!
     @IBOutlet var chatTableView: UITableView!
-    @IBOutlet var chatTextView: UITextView!
+    @IBOutlet var messageTextView: UITextView!
     @IBOutlet var sendButton: UIButton!
     @IBOutlet var chatPlaceholder: UILabel!
     
 //MARK: properties
     var isTextViewEmpty: Bool = true {
         didSet {
-            chatPlaceholder.text = isTextViewEmpty ? "메세지를 입력하세요" : nil
+            chatPlaceholder.text = isTextViewEmpty ? Localized.travelTalk_messageTextView_placeholder.text : nil
         }
     }
     
@@ -74,7 +74,7 @@ class ChatDetailViewController: UIViewController {
     }
     
     private func configureNavigationBar(){
-        let dismissButton = UIBarButtonItem(image: UIImage(systemName: "chevron.backward"), style: .done, target: self, action: #selector(backButtonTapped))
+        let dismissButton = UIBarButtonItem(image: IconManager.backButton.icon, style: .done, target: self, action: #selector(backButtonTapped))
         dismissButton.tintColor = .label
         navigationItem.leftBarButtonItem = dismissButton
         navigationItem.title = chatRoom?.chatroomName
@@ -96,7 +96,7 @@ class ChatDetailViewController: UIViewController {
     
     private func configureTextField(){
         //button
-        sendButton.setImage(UIImage(systemName: "paperplane"), for: .normal)
+        sendButton.setImage(IconManager.sendButton.icon, for: .normal)
         sendButton.tintColor = .lightGray
         sendButton.addTarget(self, action: #selector(sendMessage), for: .touchUpInside)
         
@@ -105,8 +105,8 @@ class ChatDetailViewController: UIViewController {
         chatBackgroundView.layer.cornerRadius = 12
         
         //textView
-        chatTextView.delegate = self
-        chatTextView.backgroundColor = .clear
+        messageTextView.delegate = self
+        messageTextView.backgroundColor = .clear
         
         //placeholder
         isTextViewEmpty = true
@@ -118,13 +118,13 @@ class ChatDetailViewController: UIViewController {
     }
     
     @objc private func sendMessage(_ sender: UIButton){
-        guard let date = Date.now.convertDateToString("yyyy-MM-dd HH:mm") else {
+        guard let date = Date.now.convertDateToString(ChatManager.chatDataDateFormat) else {
             presentErrorAlert()
             return
         }
         
-        chatRoom?.chatList.append(Chat(user: .user, date: date, message: chatTextView.text))
-        chatTextView.text = ""
+        chatRoom?.chatList.append(Chat(user: .user, date: date, message: messageTextView.text))
+        messageTextView.text = ""
         isTextViewEmpty = true
         
         chatTableView.reloadData()
@@ -132,9 +132,11 @@ class ChatDetailViewController: UIViewController {
     }
     
     private func presentErrorAlert(){
-        let alert = UIAlertController(title: "오류", message: "전송에 실패했습니다.", preferredStyle: .alert)
-        let errorAction = UIAlertAction(title: "확인", style: .cancel)
+        let alert = UIAlertController(title: Localized.travelTalk_sendMessage_error.title, message: Localized.travelTalk_sendMessage_error.subtitle, preferredStyle: .alert)
+        
+        let errorAction = UIAlertAction(title: Localized.travelTalk_sendMessage_error.confirmText, style: .cancel)
         alert.addAction(errorAction)
+        
         present(alert, animated: true)
     }
 }

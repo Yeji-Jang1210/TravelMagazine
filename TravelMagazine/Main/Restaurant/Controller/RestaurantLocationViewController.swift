@@ -19,6 +19,8 @@ enum RestaurantCategory: String, CaseIterable {
 
 class RestaurantLocationViewController: UIViewController {
     
+    static var identifier = String(describing: RestaurantLocationViewController.self)
+    
     @IBOutlet var mapView: MKMapView!
     
     var list: [Restaurant] = RestaurantList().restaurantArray

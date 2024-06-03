@@ -31,7 +31,7 @@ class OtherChatBubble: UITableViewCell {
     private func configureUI(){
         profileImageView.contentMode = .scaleAspectFill
         profileImageView.backgroundColor = .lightGray
-        profileImageView.image = UIImage(named: "emptyProfile")
+        profileImageView.image = IconManager.emptyProfile.icon
         
         nicknameLabel.text = nil
         nicknameLabel.font = ChatManager.nicknameFont

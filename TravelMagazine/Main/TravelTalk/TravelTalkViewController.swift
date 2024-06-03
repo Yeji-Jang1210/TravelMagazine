@@ -33,7 +33,7 @@ class TravelTalkViewController: UIViewController {
     }
     
     private func configureUI(){
-        navigationItem.title = "TRAVEL TALK"
+        navigationItem.title = Localized.travelTalk_navigationTitle.title
         configureTableView()
         configureSearchObjects()
     }
@@ -56,11 +56,11 @@ class TravelTalkViewController: UIViewController {
         searchBackgroundView.layer.cornerRadius = 10
         
         searchTextField.borderStyle = .none
-        searchTextField.placeholder = "친구 이름을 검색해보세요"
+        searchTextField.placeholder = Localized.travelTalk_searchTextField_placeholder.text
         searchTextField.addTarget(self, action: #selector(searchChatRoom), for: .editingDidEndOnExit)
         searchTextField.addTarget(self, action: #selector(resetTextField), for: .editingDidBegin)
         
-        searchButton.setImage(UIImage(systemName: "magnifyingglass"), for: .normal)
+        searchButton.setImage(UIImage(systemName: IconManager.search.rawValue), for: .normal)
         searchButton.tintColor = .lightGray
         searchButton.addTarget(self, action: #selector(searchChatRoom), for: .touchUpInside)
     }

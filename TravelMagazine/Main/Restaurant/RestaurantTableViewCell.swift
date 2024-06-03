@@ -36,8 +36,8 @@ class RestaurantTableViewCell: UITableViewCell {
         priceLabel.text = data.price.formatted()
         
         if let liked {
-            let image = liked ? "heart.fill" : "heart"
-            likeButton.setBackgroundImage(UIImage(systemName: image), for: .normal)
+            let image = liked ? IconManager.heartFill.icon : IconManager.heart.icon
+            likeButton.setBackgroundImage(image, for: .normal)
             likeButton.layoutIfNeeded()
             likeButton.subviews.first?.contentMode = .scaleAspectFit
         }

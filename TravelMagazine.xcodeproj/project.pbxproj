@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B81B3B3F2C0DF273003DD9C8 /* Localized.swift in Sources */ = {isa = PBXBuildFile; fileRef = B81B3B3E2C0DF273003DD9C8 /* Localized.swift */; };
 		B85F48A12C06FE7200B8853D /* TravelDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B85F48A02C06FE7200B8853D /* TravelDetailViewController.swift */; };
 		B85F48A32C06FE8700B8853D /* AdDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B85F48A22C06FE8700B8853D /* AdDetailViewController.swift */; };
 		B85F48A82C071EC400B8853D /* CityInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = B85F48A72C071EC400B8853D /* CityInfo.swift */; };
@@ -51,6 +52,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B81B3B3E2C0DF273003DD9C8 /* Localized.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Localized.swift; sourceTree = "<group>"; };
 		B85F48A02C06FE7200B8853D /* TravelDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravelDetailViewController.swift; sourceTree = "<group>"; };
 		B85F48A22C06FE8700B8853D /* AdDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdDetailViewController.swift; sourceTree = "<group>"; };
 		B85F48A72C071EC400B8853D /* CityInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CityInfo.swift; sourceTree = "<group>"; };
@@ -202,6 +204,7 @@
 			isa = PBXGroup;
 			children = (
 				B8D303F12C0874870054C853 /* FontManager.swift */,
+				B81B3B3E2C0DF273003DD9C8 /* Localized.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -347,6 +350,7 @@
 				B8C71BBF2C01B544007C15C4 /* MagazineTableViewCell.swift in Sources */,
 				B8C71BB62C01B357007C15C4 /* MagazineInfo.swift in Sources */,
 				B85F48AA2C071F6400B8853D /* PopularCityViewController.swift in Sources */,
+				B81B3B3F2C0DF273003DD9C8 /* Localized.swift in Sources */,
 				B8F1D2A32C045B760015FD0B /* UIColor+Extension.swift in Sources */,
 				B88C448A2C0AD9550074916B /* TravelTalkTableViewCell.swift in Sources */,
 				B89B907B2C023A9E007A7DE1 /* Restaurant.swift in Sources */,

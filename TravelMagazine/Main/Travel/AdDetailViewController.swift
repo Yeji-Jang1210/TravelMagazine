@@ -22,8 +22,8 @@ class AdDetailViewController: UIViewController {
     }
     
     private func configureNavigationItem(){
-        navigationItem.title = "광고화면"
-        navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "xmark"), style: .plain, target: self, action: #selector(dismissButtonTapped))
+        navigationItem.title = Localized.city_ad_navigation_title.title
+        navigationItem.leftBarButtonItem = UIBarButtonItem(image: IconManager.xMark.icon, style: .plain, target: self, action: #selector(dismissButtonTapped))
         navigationItem.leftBarButtonItem?.tintColor = .black
     }
     

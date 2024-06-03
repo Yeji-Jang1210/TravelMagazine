@@ -738,7 +738,7 @@
                         <outlet property="chatBackgroundView" destination="agh-Nr-YnN" id="4MS-5f-7ij"/>
                         <outlet property="chatPlaceholder" destination="Fx6-Lt-kjI" id="Y98-zk-4y1"/>
                         <outlet property="chatTableView" destination="5O0-Rc-hRu" id="P3g-nl-YLf"/>
-                        <outlet property="chatTextView" destination="79f-JQ-jAn" id="zFE-uK-ZYK"/>
+                        <outlet property="messageTextView" destination="79f-JQ-jAn" id="zFE-uK-ZYK"/>
                         <outlet property="sendButton" destination="fPg-eH-B5W" id="Ket-Fy-9RF"/>
                     </connections>
                 </viewController>

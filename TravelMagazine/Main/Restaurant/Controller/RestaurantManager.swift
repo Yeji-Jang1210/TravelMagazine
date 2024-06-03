@@ -27,8 +27,10 @@ class RestaurantManager {
     var isLikeListButtonTapped: Bool = false {
         didSet {
             filteringRestaurantList()
+            likeButtonTitle = isLikeListButtonTapped ? Localized.restaurant_likedButton.text : Localized.restaurant_allCaseButton.text
         }
     }
+    var likeButtonTitle: String = ""
     
     init(){
         filteredList = list

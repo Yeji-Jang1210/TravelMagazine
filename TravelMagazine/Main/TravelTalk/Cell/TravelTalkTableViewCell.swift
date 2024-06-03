@@ -47,7 +47,7 @@ class TravelTalkTableViewCell: UITableViewCell {
     }
     
     private func configureUI(){
-        profileImageView.image = UIImage(named:"emptyProfile")
+        profileImageView.image = IconManager.emptyProfile.icon
         profileImageView.contentMode = .scaleAspectFill
         profileImageView.backgroundColor = .systemGray4
         

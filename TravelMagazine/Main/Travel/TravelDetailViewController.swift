@@ -29,8 +29,8 @@ class TravelDetailViewController: UIViewController {
     }
     
     private func configureNavigationItem(){
-        navigationItem.title = "관광지 화면"
-        let backButtonItem = UIBarButtonItem(image: UIImage(systemName: "chevron.backward"), style: .done, target: self, action: #selector(dismissButtonTapped))
+        navigationItem.title = Localized.city_navigation_title.title
+        let backButtonItem = UIBarButtonItem(image: IconManager.backButton.icon, style: .done, target: self, action: #selector(dismissButtonTapped))
         backButtonItem.tintColor = .black
         navigationItem.leftBarButtonItem = backButtonItem
     }
@@ -47,8 +47,8 @@ class TravelDetailViewController: UIViewController {
     
     private func setData(){
         guard let data else {
-            let alert = UIAlertController(title: "오류", message: "데이터를 불러오는데 실패했습니다", preferredStyle: .alert)
-            let dismissAction = UIAlertAction(title: "확인", style: .default){ _ in
+            let alert = UIAlertController(title: Localized.city_loadData_error_dlg.title, message: Localized.city_loadData_error_dlg.subtitle, preferredStyle: .alert)
+            let dismissAction = UIAlertAction(title: Localized.city_loadData_error_dlg.confirmText, style: .default){ _ in
                 self.navigationController?.popViewController(animated: true)
             }
             alert.addAction(dismissAction)

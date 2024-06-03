@@ -14,7 +14,7 @@ class MagazineTableViewController: UITableViewController {
     var navigationItemImageView: UIImageView = {
         let object = UIImageView()
         object.frame = CGRect(x: 0, y: 0, width: 30, height: 30)
-        object.image = UIImage(systemName: "ellipsis")
+        object.image = IconManager.ellipsis.icon
         object.contentMode = .scaleAspectFit
         object.tintColor = .lightGray
         return object
@@ -23,7 +23,7 @@ class MagazineTableViewController: UITableViewController {
     var navigationItemTitle: UILabel {
         let object = UILabel()
         object.font = .systemFont(ofSize: 17, weight: .bold)
-        object.text = "SeSAC TRAVEL"
+        object.text = Localized.travel_navigationTitle.title
         return object
     }
     

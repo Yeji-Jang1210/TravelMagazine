@@ -53,7 +53,7 @@ class TravelTableViewCell: UITableViewCell {
             travelImageView.kf.setImage(with: url)
         }
         
-        likeButton.setImage(UIImage(systemName: data.likeImage), for: .normal)
+        likeButton.setImage(data.likeImage, for: .normal)
         
     }
     

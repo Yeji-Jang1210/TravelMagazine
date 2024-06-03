@@ -43,7 +43,7 @@ class RestaurantTableViewController: UITableViewController {
             let action = UIAction(title: category.rawValue, handler: categoryTapped)
             categoryMenuActions.append(action)
         }
-        categoryButton.menu = UIMenu(title: "음식종류", options: .displayInline, children: categoryMenuActions)
+        categoryButton.menu = UIMenu(title: Localized.restaurant_categoryButton.text, options: .displayInline, children: categoryMenuActions)
         //버튼을 길게 누르지 않고 탭만 하면 나오게끔 하는 속성
         categoryButton.showsMenuAsPrimaryAction = true
         
@@ -54,12 +54,12 @@ class RestaurantTableViewController: UITableViewController {
            priceMenuActions.append(action)
         }
         
-        priceButton.menu = UIMenu(title: "가격", options: .displayInline, children: priceMenuActions)
+        priceButton.menu = UIMenu(title: Localized.restaurant_priceButton.text, options: .displayInline, children: priceMenuActions)
         priceButton.showsMenuAsPrimaryAction = true
     }
     
     func setNavigationRightItem(){
-        navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "map"), style: .plain, target: self, action: #selector(presentMapView))
+        navigationItem.rightBarButtonItem = UIBarButtonItem(image: IconManager.map.icon, style: .plain, target: self, action: #selector(presentMapView))
     }
     
     @objc func searchRestaurant(_ sender: Any){
@@ -72,7 +72,7 @@ class RestaurantTableViewController: UITableViewController {
     }
     
     @objc func presentMapView(){
-        let vc = storyboard?.instantiateViewController(identifier: "RestaurantLocationViewController") as! RestaurantLocationViewController
+        let vc = storyboard?.instantiateViewController(identifier: RestaurantLocationViewController.identifier) as! RestaurantLocationViewController
         navigationController?.pushViewController(vc, animated: true)
     }
     
@@ -90,7 +90,7 @@ class RestaurantTableViewController: UITableViewController {
     
     @IBAction func likeListButtonTapped(_ sender: UIButton) {
         controller.isLikeListButtonTapped.toggle()
-        likedRestaurantListButton.setTitle(controller.isLikeListButtonTapped ? "전체보기" : "즐겨찾기", for: .normal)
+        likedRestaurantListButton.setTitle(controller.likeButtonTitle, for: .normal)
         tableView.reloadData()
     }
     
@@ -102,12 +102,14 @@ class RestaurantTableViewController: UITableViewController {
     }
     
     @objc func phoneNumberButtonTapped(_ sender: UIButton){
-        let alert = UIAlertController(title: "통화", message: nil, preferredStyle: .actionSheet)
+        let alert = UIAlertController(title: Localized.restaurant_call_dlg.title, message: nil, preferredStyle: .actionSheet)
+        
         let callAction = UIAlertAction(title: controller.list[sender.tag].phoneNumber, style: .default){ [weak self] action in
             guard let self else { return }
             print("📞 통화: \(controller.filteredList[sender.tag].phoneNumber)")
         }
-        let cancelAction = UIAlertAction(title: "취소", style: .cancel)
+        
+        let cancelAction = UIAlertAction(title: Localized.restaurant_call_dlg.confirmText, style: .cancel)
         
         alert.addAction(callAction)
         alert.addAction(cancelAction)

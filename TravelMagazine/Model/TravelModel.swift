@@ -20,9 +20,9 @@ struct Travel {
         return "(\(grade)) • 저장 \(save.formatted())"
     }
     
-    var likeImage: String {
-        guard let like else { return "heart" }
-        return like ? "heart.fill" : "heart"
+    var likeImage: UIImage? {
+        guard let like else { return IconManager.heart.icon }
+        return like ? IconManager.heartFill.icon : IconManager.heart.icon
     }
     
     

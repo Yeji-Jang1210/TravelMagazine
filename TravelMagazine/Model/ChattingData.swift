@@ -30,8 +30,8 @@ struct ChatRoom {
     var chatList: [Chat] = [] //채팅 화면에서 사용할 데이터
     
     var chatRoomDate: String {
-        guard let date = chatList.last?.date.convertStringToDate("yyyy-MM-dd HH:mm") else { return "" }
-        return date.convertDateToString("yy.MM.dd") ?? ""
+        guard let date = chatList.last?.date.convertStringToDate(ChatManager.chatDataDateFormat) else { return "" }
+        return date.convertDateToString(ChatManager.chatRoomDataFormat) ?? ""
     }
 }
 
@@ -42,8 +42,8 @@ struct Chat {
     let message: String
     
     var chatBubbleTime: String {
-        guard let time = date.convertStringToDate("yyyy-MM-dd HH:mm") else { return "" }
-        return time.convertDateToString("HH:mm a") ?? ""
+        guard let time = date.convertStringToDate(ChatManager.chatDataDateFormat) else { return "" }
+        return time.convertDateToString(ChatManager.chatBubbleTimeFormat) ?? ""
     }
 }
 
