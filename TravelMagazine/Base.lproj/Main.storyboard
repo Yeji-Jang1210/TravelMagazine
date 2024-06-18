@@ -664,14 +664,14 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="S8h-nt-4pf">
-                                <rect key="frame" x="0.0" y="0.0" width="393" height="818"/>
+                                <rect key="frame" x="0.0" y="59" width="393" height="759"/>
                                 <subviews>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="5O0-Rc-hRu">
-                                        <rect key="frame" x="0.0" y="0.0" width="393" height="756"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="393" height="697"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                     </tableView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="agh-Nr-YnN">
-                                        <rect key="frame" x="16" y="764" width="361" height="46"/>
+                                        <rect key="frame" x="16" y="705" width="361" height="46"/>
                                         <subviews>
                                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="79f-JQ-jAn">
                                                 <rect key="frame" x="8" y="8" width="307" height="30"/>
@@ -726,12 +726,13 @@
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="x1I-Ha-oCw"/>
+                        <keyboardLayoutGuide key="keyboard" id="2Rn-mj-wC8"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="S8h-nt-4pf" firstAttribute="leading" secondItem="y5c-AE-YWG" secondAttribute="leading" id="3gy-rk-efp"/>
-                            <constraint firstItem="x1I-Ha-oCw" firstAttribute="bottom" secondItem="S8h-nt-4pf" secondAttribute="bottom" id="b5r-zG-rYs"/>
+                            <constraint firstItem="2Rn-mj-wC8" firstAttribute="top" secondItem="S8h-nt-4pf" secondAttribute="bottom" id="b5r-zG-rYs"/>
                             <constraint firstAttribute="trailing" secondItem="S8h-nt-4pf" secondAttribute="trailing" id="d6h-db-yxL"/>
-                            <constraint firstItem="S8h-nt-4pf" firstAttribute="top" secondItem="y5c-AE-YWG" secondAttribute="top" id="kkW-4C-5qH"/>
+                            <constraint firstItem="S8h-nt-4pf" firstAttribute="top" secondItem="x1I-Ha-oCw" secondAttribute="top" id="kkW-4C-5qH"/>
                         </constraints>
                     </view>
                     <connections>

@@ -36,9 +36,9 @@ class ChatDetailViewController: UIViewController {
     
     public lazy var chatList: [Chat] = []
     
-    deinit {
-        removeKeyboardNotifications()
-    }
+//    deinit {
+//        removeKeyboardNotifications()
+//    }
     
 //MARK: life cycle
     override func viewDidLoad() {
@@ -46,6 +46,9 @@ class ChatDetailViewController: UIViewController {
         configureUI()
     }
     
+    //viewDidLayoutSubViews()
+    //view 및 그 Subview들의 크기를 다시 계산하거나 위치의 재지정을 다루는 메소드
+    //재귀적으로 모든 SubView들의 layoutSubviews까지 호출되기 때문에, 부하가 크다.
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         chatTableView.scrollToRow(at: IndexPath(row: chatList.count - 1, section: 0), at: .bottom, animated: false)
@@ -57,17 +60,17 @@ class ChatDetailViewController: UIViewController {
         configureNavigationBar()
         configureTableView()
         configureTextField()
-        registerKeyboardNotifications()
+       // registerKeyboardNotifications()
     }
     
-    private func registerKeyboardNotifications(){
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
-    }
-    private func removeKeyboardNotifications(){
-        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillShowNotification, object: nil)
-        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: nil)
-    }
+//    private func registerKeyboardNotifications(){
+//        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
+//        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
+//    }
+//    private func removeKeyboardNotifications(){
+//        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillShowNotification, object: nil)
+//        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: nil)
+//    }
     
     @objc func keyboardDismiss(){
         view.endEditing(true)
@@ -167,18 +170,18 @@ extension ChatDetailViewController: UITextViewDelegate {
     }
 }
 
-//keyboard Actions
-extension ChatDetailViewController {
-    @objc func keyboardWillShow(notification: NSNotification){
-        guard let keyboardFrame = notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue else { return }
-            let keyboardHeight = keyboardFrame.cgRectValue.height
-
-            if view.frame.origin.y == 0 {
-                view.frame.origin.y -= keyboardHeight
-            }
-    }
-    
-    @objc func keyboardWillHide(notification: NSNotification){
-        view.frame.origin.y = 0
-    }
-}
+////keyboard Actions
+//extension ChatDetailViewController {
+//    @objc func keyboardWillShow(notification: NSNotification){
+//        guard let keyboardFrame = notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue else { return }
+//            let keyboardHeight = keyboardFrame.cgRectValue.height
+//
+//            if view.frame.origin.y == 0 {
+//                view.frame.origin.y -= keyboardHeight
+//            }
+//    }
+//    
+//    @objc func keyboardWillHide(notification: NSNotification){
+//        view.frame.origin.y = 0
+//    }
+//}
