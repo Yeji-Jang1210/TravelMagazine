@@ -345,23 +345,38 @@
                                 <rect key="frame" x="0.0" y="59" width="393" height="759"/>
                                 <standardMapConfiguration key="preferredConfiguration"/>
                             </mapView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nua-JQ-lXN">
+                                <rect key="frame" x="16" y="762" width="40" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="40" id="IDB-3L-WYd"/>
+                                    <constraint firstAttribute="height" constant="40" id="sGG-0B-4dc"/>
+                                </constraints>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain">
+                                    <backgroundConfiguration key="background" image="location.circle" catalog="system"/>
+                                </buttonConfiguration>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="9jH-Vu-DuF"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="9jH-Vu-DuF" firstAttribute="trailing" secondItem="aLf-4A-Xnh" secondAttribute="trailing" id="26P-ge-c9P"/>
                             <constraint firstItem="aLf-4A-Xnh" firstAttribute="leading" secondItem="9jH-Vu-DuF" secondAttribute="leading" id="55o-Lh-omm"/>
+                            <constraint firstItem="Nua-JQ-lXN" firstAttribute="leading" secondItem="9jH-Vu-DuF" secondAttribute="leading" constant="16" id="EuD-Ap-eNG"/>
                             <constraint firstItem="9jH-Vu-DuF" firstAttribute="bottom" secondItem="aLf-4A-Xnh" secondAttribute="bottom" id="Uc5-eW-YKd"/>
                             <constraint firstItem="aLf-4A-Xnh" firstAttribute="top" secondItem="9jH-Vu-DuF" secondAttribute="top" id="dO2-bu-Xe8"/>
+                            <constraint firstItem="9jH-Vu-DuF" firstAttribute="bottom" secondItem="Nua-JQ-lXN" secondAttribute="bottom" constant="16" id="sdh-jN-ddm"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="currentLocationButton" destination="Nua-JQ-lXN" id="Ld7-ep-Oay"/>
                         <outlet property="mapView" destination="aLf-4A-Xnh" id="Jap-gd-Qfx"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bGh-cJ-HfN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3604" y="810"/>
+            <point key="canvasLocation" x="3603.8167938931297" y="809.85915492957747"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="whw-WG-hb1">
@@ -869,6 +884,7 @@
         <image name="airplane" catalog="system" width="128" height="115"/>
         <image name="building.2.fill" catalog="system" width="128" height="117"/>
         <image name="fork.knife.circle.fill" catalog="system" width="128" height="123"/>
+        <image name="location.circle" catalog="system" width="128" height="123"/>
         <image name="message.fill" catalog="system" width="128" height="114"/>
         <image name="phone" catalog="system" width="128" height="115"/>
         <image name="star" catalog="system" width="128" height="116"/>
